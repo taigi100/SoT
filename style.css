@@ -28,7 +28,7 @@ form {
 
 .event-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));;
     gap: 10px;
 }
 
@@ -77,4 +77,24 @@ form {
 
 #eventsContainer {
     grid-column: span 2;
+}
+
+@media screen and (max-width: 768px) {
+    form {
+        width: 95%; /* Adjust the form width for smaller screens */
+        grid-template-columns: 1fr; /* Display elements in a single column */
+    }
+
+    .big-text-field {
+        grid-column: span 1; /* Change the span to 1 for smaller screens */
+        grid-row: span 1; /* Change the span to 1 for smaller screens */
+    }
+
+    #voyageTypeGroup {
+        grid-column: span 1;
+    }
+
+    #eventsContainer {
+        grid-column: span 1; /* Change the span to 1 for smaller screens */
+    }
 }
