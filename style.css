@@ -1,40 +1,41 @@
-/* style.css */
+/* Updated styles for grid layout and responsiveness */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
 }
 
 form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 600px;
 }
 
-.input-group, .event-list {
-    margin-bottom: 15px;
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 .event {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
-}
-
-.event label {
-    margin-right: 10px;
-}
-
-.event span {
-    margin-left: 5px;
-    margin-right: 10px;
+    justify-content: space-between;
 }
 
 #report {
@@ -42,5 +43,38 @@ form {
     background: #eef;
     padding: 20px;
     border-radius: 8px;
-    width: 300px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.big-text-field {
+    grid-column: span 2; /* Span across two columns */
+    grid-row: span 4; /* Span across two rows */
+}
+
+.event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Adds some space between each event row */
+}
+
+.event label {
+    margin-right: auto; /* Ensures the label is pushed to the left */
+}
+
+.event button {
+    margin: 0 5px; /* Adds some space between the buttons and the number */
+}
+
+#customMessage {
+    height: 100%;
+}
+
+#voyageTypeGroup {
+    grid-column: span 2;
+}
+
+#eventsContainer {
+    grid-column: span 2;
 }

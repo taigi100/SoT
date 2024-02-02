@@ -3,116 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sea of Thieves Voyage Report</title>
+    <title>The Royal Navy - After Action Report</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form id="voyageForm">
-        <div class="input-group">
-            <label for="initialGold">Initial Gold:</label>
-            <input type="number" id="initialGold" name="initialGold">
-        </div>
+<form id="voyageForm">
+    <div class="input-group">
+        <label for="captainName">Captain's Name:</label>
+        <input type="text" id="captainName" name="captainName">
+    </div>
+    <div class="input-group">
+        <label for="voyageNo">Voyage number:</label>
+        <input type="text" id="voyageNo" name="voyageNo">
+    </div>
+    <div class="input-group">
+        <label for="ship">Ship:</label>
+        <select id="ship" name="ship">
+            <option value="NONSUCH">HMS NONSUCH</option>
+            <option value="LYDIA">HMS LYDIA</option>
+            <option value="PEMBROKE">HMS PEMBROKE</option>
+        </select>
+    </div>
+    <div class="input-group big-text-field">
+        <label for="customMessage">Notes:</label>
+        <input type="text" id="customMessage" name="customMessage">
+    </div>
 
-        <div class="input-group">
-            <label for="endingGold">Ending Gold:</label>
-            <input type="number" id="endingGold" name="endingGold">
-        </div>
+    <div class="input-group" id="voyageTypeGroup">
+        <label for="voyageType">Voyage Type:</label>
+        <select id="voyageType" name="voyageType">
+            <option value="Patrol">Patrol</option>
+            <option value="Hourglass">Hourglass</option>
+            <option value="Tell Tales">Tell Tales</option>
+        </select>
+    </div>
 
-        <!-- Similar sections for doubloons and ancient coins -->
-        <div class="input-group">
-            <label for="initialDoubloons">Initial Doubloons:</label>
-            <input type="number" id="initialDoubloons" name="initialDoubloons">
-        </div>
+    <div class="input-group">
+        <label for="initialGold">Initial Gold:</label>
+        <input type="number" id="initialGold" name="initialGold">
+    </div>
 
-        <div class="input-group">
-            <label for="endingDoubloons">Ending Doubloons:</label>
-            <input type="number" id="endingDoubloons" name="endingDoubloons">
-        </div>
+    <div class="input-group">
+        <label for="endingGold">Ending Gold:</label>
+        <input type="number" id="endingGold" name="endingGold">
+    </div>
 
-        <div class="input-group">
-            <label for="initialAncientCoins">Initial Ancient Coins:</label>
-            <input type="number" id="initialAncientCoins" name="initialAncientCoins">
-        </div>
+    <div class="input-group">
+        <label for="initialDoubloons">Initial Doubloons:</label>
+        <input type="number" id="initialDoubloons" name="initialDoubloons">
+    </div>
 
-        <div class="input-group">
-            <label for="endingAncientCoins">Ending Ancient Coins:</label>
-            <input type="number" id="endingAncientCoins" name="endingAncientCoins">
-        </div>
+    <div class="input-group">
+        <label for="endingDoubloons">Ending Doubloons:</label>
+        <input type="number" id="endingDoubloons" name="endingDoubloons">
+    </div>
 
-        <div class="event-list">
-            <div class="event">
-                <label>Sea Fort</label>
-                <button type="button" onclick="decrementCounter('seaFort')">-</button>
-                <span id="seaFort">0</span>
-                <button type="button" onclick="incrementCounter('seaFort')">+</button>
-            </div>
-            <div class="event">
-                <label>Ghost Fleet</label>
-                <button type="button" onclick="decrementCounter('ghostFleet')">-</button>
-                <span id="ghostFleet">0</span>
-                <button type="button" onclick="incrementCounter('ghostFleet')">+</button>
-            </div>
-            <div class="event">
-                <label>Fleet of Fortune</label>
-                <button type="button" onclick="decrementCounter('fleetOfFortune')">-</button>
-                <span id="fleetOfFortune">0</span>
-                <button type="button" onclick="incrementCounter('fleetOfFortune')">+</button>
-            </div>
-            <div class="event">
-                <label>Grade 5 Guild Emissary</label>
-                <button type="button" onclick="decrementCounter('grade5GuildEmissary')">-</button>
-                <span id="grade5GuildEmissary">0</span>
-                <button type="button" onclick="incrementCounter('grade5GuildEmissary')">+</button>
-            </div>
-            <div class="event">
-                <label>Grade 5 Gold Emissary</label>
-                <button type="button" onclick="decrementCounter('grade5GoldEmissary')">-</button>
-                <span id="grade5GoldEmissary">0</span>
-                <button type="button" onclick="incrementCounter('grade5GoldEmissary')">+</button>
-            </div>
-            <div class="event">
-                <label>Grade 5 Order of Souls Emissary</label>
-                <button type="button" onclick="decrementCounter('grade5OrderOfSoulsEmissary')">-</button>
-                <span id="grade5OrderOfSoulsEmissary">0</span>
-                <button type="button" onclick="incrementCounter('grade5OrderOfSoulsEmissary')">+</button>
-            </div>
-            <div class="event">
-                <label>Grade 5 Reaper Emissary</label>
-                <button type="button" onclick="decrementCounter('grade5ReaperEmissary')">-</button>
-                <span id="grade5ReaperEmissary">0</span>
-                <button type="button" onclick="incrementCounter('grade5ReaperEmissary')">+</button>
-            </div>
-            <div class="event">
-                <label>Grade 5 Athena Emissary</label>
-                <button type="button" onclick="decrementCounter('grade5AthenaEmissary')">-</button>
-                <span id="grade5AthenaEmissary">0</span>
-                <button type="button" onclick="incrementCounter('grade5AthenaEmissary')">+</button>
-            </div>
-            <div class="event">
-                <label>PvP Sloop</label>
-                <button type="button" onclick="decrementCounter('pvpSloop')">-</button>
-                <span id="pvpSloop">0</span>
-                <button type="button" onclick="incrementCounter('pvpSloop')">+</button>
-            </div>
-            <div class="event">
-                <label>PvP Brigantine</label>
-                <button type="button" onclick="decrementCounter('pvpBrigantine')">-</button>
-                <span id="pvpBrigantine">0</span>
-                <button type="button" onclick="incrementCounter('pvpBrigantine')">+</button>
-            </div>
-            <div class="event">
-                <label>PvP Galleon</label>
-                <button type="button" onclick="decrementCounter('pvpGalleon')">-</button>
-                <span id="pvpGalleon">0</span>
-                <button type="button" onclick="incrementCounter('pvpGalleon')">+</button>
-            </div>
-        </div>
+    <div class="input-group">
+        <label for="initialAncientCoins">Initial Ancient Coins:</label>
+        <input type="number" id="initialAncientCoins" name="initialAncientCoins">
+    </div>
 
-        <button type="button" onclick="generateReport()">Generate Report</button>
-    </form>
+    <div class="input-group">
+        <label for="endingAncientCoins">Ending Ancient Coins:</label>
+        <input type="number" id="endingAncientCoins" name="endingAncientCoins">
+    </div>
 
-    <div id="report"></div>
 
-    <script src="script.js"></script>
+    <div class="event-list" id="eventsContainer">
+    </div>
+
+    <button type="button" onclick="startTimer()" id="startTimer">Start Timer</button>
+    <button type="button" onclick="stopTimer()" id="stopTimer">Stop Timer</button>
+    <button type="button" onclick="generateReport()">Generate Report</button>
+    <button type="button" id="copyReport">Copy Report</button>
+    <button type="button" id="clearData">CLEAR DATA</button>
+</form>
+
+<div id="elapsedTime"></div>
+
+<div id="report"></div>
+
+<dialog>
+    <button onclick="clearForm()">Confirm</button>
+    <button autofocus>Cancel</button>
+    <p>Are you sure you want to reset the form?</p>
+</dialog>
+
+
+<script src="script.js"></script>
 </body>
 </html>
