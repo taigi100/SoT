@@ -220,7 +220,7 @@ function generateEventHTML(events) {
 
 // Example usage
 const events = ["PvP Sloop", "PvP Brigantine", "PvP Galleon", "Highest hourglass streak", "Sea Fort", "Skeleton Fort", "Fort of Fortune", "Skeleton Fleet", "Ghost Fleet", "Ashen Winds", "Davy Jones Fleet", "Fort of the Damned", "Legend of the Veil", "Skeleton Ship", "Megalodon", "Kraken", "Shipwreck", "Siren Shrine", "Siren Treasury", "Gold Hoarders Voyage", "Merchant Hoarders Voyage", "Order of Souls Hoarders Voyage", "Athena's Hoarders Voyage", "Grade 5 Emissary"];
-const elementsToSave = ["captainName", "voyageNo", "ship", "initialGold", "endingGold", "initialDoubloons", "endingDoubloons", "initialAncientCoins", "endingAncientCoins", "elapsedTime", ...events];
+const elementsToSave = ["captainName", "customMessage", "voyageNo", "ship", "initialGold", "endingGold", "initialDoubloons", "endingDoubloons", "initialAncientCoins", "endingAncientCoins", "elapsedTime", ...events];
 generateEventHTML(events);
 
 shipNameToText = {
