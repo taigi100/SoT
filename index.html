@@ -6,6 +6,7 @@
     <title>The Royal Navy - After Action Report</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="script.js"></script>
 <body>
 <form id="voyageForm">
     <div class="input-group">
@@ -22,11 +23,13 @@
             <option value="NONSUCH">HMS NONSUCH</option>
             <option value="LYDIA">HMS LYDIA</option>
             <option value="PEMBROKE">HMS PEMBROKE</option>
+            <option value="ETERNAL">HMS ETERNAL</option>
+            <option value="BROTHERHOOD">HMS BROTHERHOOD</option>
         </select>
     </div>
     <div class="input-group big-text-field">
         <label for="customMessage">Notes:</label>
-        <input type="text" id="customMessage" name="customMessage">
+        <textarea id="customMessage" name="customMessage"></textarea>
     </div>
 
     <div class="input-group" id="voyageTypeGroup">
@@ -58,38 +61,29 @@
         <input type="number" id="endingDoubloons" name="endingDoubloons">
     </div>
 
-    <div class="input-group">
-        <label for="initialAncientCoins">Initial Ancient Coins:</label>
-        <input type="number" id="initialAncientCoins" name="initialAncientCoins">
-    </div>
-
-    <div class="input-group">
-        <label for="endingAncientCoins">Ending Ancient Coins:</label>
-        <input type="number" id="endingAncientCoins" name="endingAncientCoins">
-    </div>
-
-
     <div class="event-list" id="eventsContainer">
     </div>
 
-    <button type="button" onclick="startTimer()" id="startTimer">Start Timer</button>
-    <button type="button" onclick="stopTimer()" id="stopTimer">Stop Timer</button>
-    <button type="button" onclick="generateReport()">Generate Report</button>
-    <button type="button" id="copyReport">Copy Report</button>
-    <button type="button" id="clearData">CLEAR DATA</button>
+    <button type="button" id="addCrewmanButton">Add New Crewman</button>
+    <div class="input-group" id="crewSection">
+    </div>
+
+
+    <button type="button" id="startTimerButton">Start Timer</button>
+    <button type="button" id="stopTimerButton">Stop Timer</button>
+    <button type="button" id="generateReportButton">Generate Report</button>
+    <button type="button" id="copyReportButton">Copy Report</button>
+    <button type="button" id="clearDataButton">CLEAR DATA</button>
 </form>
 
 <div id="elapsedTime"></div>
+<div class="wrap-text" id="report"></div>
+<div id="toastContainer"></div>
 
-<div id="report"></div>
-
-<dialog>
-    <button onclick="clearForm()">Confirm</button>
-    <button autofocus>Cancel</button>
+<dialog id="confirmationDialog">
+    <button id="confirmClearButton">Confirm</button>
+    <button autofocus id="cancelClearButton">Cancel</button>
     <p>Are you sure you want to reset the form?</p>
 </dialog>
-
-
-<script src="script.js"></script>
 </body>
 </html>
