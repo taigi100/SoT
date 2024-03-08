@@ -5,21 +5,50 @@ const shipOptions = {
     "LYDIA": "HMS LYDIA",
     "PEMBROKE": "HMS PEMBROKE",
     "ETERNAL": "HMS ETERNAL",
-    "BROTHERHOOD": "HMS BROTHERHOOD"
+    "BROTHERHOOD": "HMS BROTHERHOOD",
+    "INTREPID": "HMS INTREPID",
+    "SURPRISE": "HMS SURPRISE",
 };
 
 const shipNameToText = {
     "NONSUCH": "voyage of the HMS Nonsuch",
     "LYDIA": "voyage of the HMS Lydia auxiliary to the HMS Nonsuch",
     "PEMBROKE": "voyage of the HMS Pembroke auxiliary to the HMS Nonsuch",
+    "SURPRISE": "voyage of the HMS Surprise auxiliary to the HMS Nonsuch",
     "ETERNAL": "voyage of the HMS Eternal",
     "BROTHERHOOD": "voyage of the HMS Brotherhood auxiliary to the HMS Eternal",
+    "INTREPID": "voyage of the HMS Intrepid",
 }
 
-const events = ["PvP Sloop", "PvP Brigantine", "PvP Galleon", "Highest hourglass streak", "Sea Fort", "Skeleton Fort", "Fort of Fortune", "Skeleton Fleet", "Ghost Fleet", "Ashen Winds", "Davy Jones Fleet", "Fort of the Damned", "Legend of the Veil", "Skeleton Ship", "Megalodon", "Kraken", "Shipwreck", "Siren Shrine", "Siren Treasury", "Gold Hoarders Voyage", "Merchant Hoarders Voyage", "Order of Souls Hoarders Voyage", "Athena's Hoarders Voyage", "Grade 5 Emissary"];
+const events = [
+    "Grade 5 Emissary",
+    "PvP Sloop",
+    "PvP Brigantine",
+    "PvP Galleon",
+    "Highest hourglass streak",
+    "Sea Fort", "Skeleton Fort",
+    "Fort of Fortune",
+    "Skeleton Fleet",
+    "Ghost Fleet",
+    "Fleet of Fortune",
+    "Skeleton Ship Sloop",
+    "Skeleton Ship Brigantine",
+    "Skeleton Ship Galleon",
+    "Ashen Winds",
+    "Davy Jones Fleet",
+    "Fort of the Damned",
+    "Legend of the Veil",
+    "Megalodon",
+    "Kraken", "Shipwreck",
+    "Siren Shrine", "Siren Treasury",
+    "Gold Hoarders Voyage",
+    "Merchant Hoarders Voyage",
+    "Order of Souls Hoarders Voyage",
+    "Athena's Hoarders Voyage"
+];
 const elementsToSave = ["captainName", "customMessage", "voyageNo", "ship", "initialGold", "endingGold", "initialDoubloons", "endingDoubloons", "elapsedTime", ...events];
 const elementsToNotClear = ["captainName"];
-const roles = ['Quartermaster', 'Gunner', 'Boarder', 'Carpenter', 'CO', 'XO', 'Partial'];
+const roles = ['CO', 'XO', 'Quartermaster', 'Gunner', 'Boarder', 'Carpenter', 'Partial'];
 
 let crewMemberCount = 0;
 let saveInterval;
