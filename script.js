@@ -20,8 +20,8 @@ const shipNameToText = {
     "ETERNAL": "voyage of the HMS Eternal",
     "BROTHERHOOD": "voyage of the HMS Brotherhood auxiliary to the HMS Eternal",
     "INTREPID": "voyage of the HMS Intrepid",
-    "ORION": "voyage of the HMS Orion auxiliary to the HMS Intepid",
-    "HEADWIND": "voyage of the HMS Headwind auxiliary to the HMS Intepid"
+    "ORION": "voyage of the HMS Orion auxiliary to the HMS Intrepid",
+    "HEADWIND": "voyage of the HMS Headwind auxiliary to the HMS Intrepid"
 }
 
 const events = [
