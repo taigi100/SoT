@@ -9,7 +9,9 @@ const shipOptions = {
     "INTREPID": "HMS INTREPID",
     "ORION": "HMS ORION",
     "HEADWIND": "HMS HEADWIND",
-    "SURPRISE": "HMS SURPRISE"
+    "SURPRISE": "HMS SURPRISE",
+    "INSIGHT": "HMS INSIGHT",
+    "HORUS": "HMS HORUS"
 };
 
 const shipNameToText = {
@@ -21,7 +23,9 @@ const shipNameToText = {
     "BROTHERHOOD": "voyage of the HMS Brotherhood auxiliary to the HMS Eternal",
     "INTREPID": "voyage of the HMS Intrepid",
     "ORION": "voyage of the HMS Orion auxiliary to the HMS Intrepid",
-    "HEADWIND": "voyage of the HMS Headwind auxiliary to the HMS Intrepid"
+    "HEADWIND": "voyage of the HMS Headwind auxiliary to the HMS Intrepid",
+    "INSIGHT": "voyage of the HMS Insight",
+    "HORUS": "voyage of the HMS Horus auxiliary to the HMS Insight"
 }
 
 const events = [
