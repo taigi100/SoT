@@ -52,7 +52,7 @@ const events = [
     "Gold Hoarders Voyage",
     "Merchant Hoarders Voyage",
     "Order of Souls Hoarders Voyage",
-    "Athena's Hoarders Voyage"
+    "Athena Hoarders Voyage"
 ];
 const elementsToSave = ["captainName", "customMessage", "voyageNo", "ship", "initialGold", "endingGold", "initialDoubloons", "endingDoubloons", "elapsedTime", ...events];
 const elementsToNotClear = ["captainName"];
