@@ -4,14 +4,15 @@ const shipOptions = {
     "NONSUCH": "HMS NONSUCH",
     "LYDIA": "HMS LYDIA",
     "PEMBROKE": "HMS PEMBROKE",
-    "ETERNAL": "HMS ETERNAL",
-    "BROTHERHOOD": "HMS BROTHERHOOD",
     "INTREPID": "HMS INTREPID",
     "ORION": "HMS ORION",
     "HEADWIND": "HMS HEADWIND",
     "SURPRISE": "HMS SURPRISE",
     "INSIGHT": "HMS INSIGHT",
-    "HORUS": "HMS HORUS"
+    "HORUS": "HMS HORUS",
+    "DREADNOUGHT": "HMS DREADNOUGHT",
+    "ANDROMEDA": "HMS ANDROMEDA",
+    "ATHENA": "HMS ATHENA",
 };
 
 const shipNameToText = {
@@ -19,13 +20,14 @@ const shipNameToText = {
     "LYDIA": "voyage of the HMS Lydia auxiliary to the HMS Nonsuch",
     "PEMBROKE": "voyage of the HMS Pembroke auxiliary to the HMS Nonsuch",
     "SURPRISE": "voyage of the HMS Surprise auxiliary to the HMS Nonsuch",
-    "ETERNAL": "voyage of the HMS Eternal",
-    "BROTHERHOOD": "voyage of the HMS Brotherhood auxiliary to the HMS Eternal",
+    "DREADNOUGHT": "voyage of the HMS Dreadnought auxiliary to the HMS Nonsuch",
     "INTREPID": "voyage of the HMS Intrepid",
     "ORION": "voyage of the HMS Orion auxiliary to the HMS Intrepid",
     "HEADWIND": "voyage of the HMS Headwind auxiliary to the HMS Intrepid",
+    "ANDROMEDA": "voyage of the HMS Andromeda auxiliary to the HMS Intrepid",
     "INSIGHT": "voyage of the HMS Insight",
-    "HORUS": "voyage of the HMS Horus auxiliary to the HMS Insight"
+    "HORUS": "voyage of the HMS Horus auxiliary to the HMS Insight",
+    "ATHENA": "voyage of the HMS Athena auxiliary to the HMS Insight"
 }
 
 const events = [
@@ -50,9 +52,9 @@ const events = [
     "Kraken", "Shipwreck",
     "Siren Shrine", "Siren Treasury",
     "Gold Hoarders Voyage",
-    "Merchant Hoarders Voyage",
-    "Order of Souls Hoarders Voyage",
-    "Athena Hoarders Voyage"
+    "Merchant Alliance Voyage",
+    "Order of Souls Voyage",
+    "Athena's Fortune Voyage"
 ];
 const elementsToSave = ["captainName", "customMessage", "voyageNo", "ship", "initialGold", "endingGold", "initialDoubloons", "endingDoubloons", "elapsedTime", ...events];
 const elementsToNotClear = ["captainName"];
@@ -88,9 +90,9 @@ function generateEventHTML(events) {
         div.className = 'event';
         div.innerHTML = `
             <label>${event}</label>
-            <button type="button" onclick="updateCounter('${event.replace(/\s+/g, '')}', -1)">-</button>
-            <span id="${event.replace(/\s+/g, '')}">0</span>
-            <button type="button" onclick="updateCounter('${event.replace(/\s+/g, '')}', 1)">+</button>
+            <button type="button" onclick="updateCounter('${event.replace(/\s+/g, '').replace(/'/g, "")}', -1)">-</button>
+            <span id="${event.replace(/\s+/g, '').replace(/'/g, "")}">0</span>
+            <button type="button" onclick="updateCounter('${event.replace(/\s+/g, '').replace(/'/g, "")}', 1)">+</button>
         `;
         container.appendChild(div);
     });
@@ -156,13 +158,15 @@ function updateCounter(eventId, delta) {
     countElement.innerText = (parseInt(countElement.innerText) + delta).toString();
 }
 
+let startingTime = null;
 let timerInterval = null; // Holds the reference to setInterval
 let elapsedTime = 0; // Holds the elapsed time in seconds
 
 function startTimer() {
-    if (timerInterval !== null) return; // Prevents multiple timers from starting
+    startingTime = Date.now();
+    if (timerInterval !== null) return;
     timerInterval = setInterval(() => {
-        elapsedTime += 1;
+        elapsedTime = Date.now() - startingTime; // Update the elapsed time
         updateDisplay(); // Update your timer display accordingly
     }, 1000); // Update every second
 }
@@ -170,16 +174,18 @@ function startTimer() {
 function stopTimer() {
     clearInterval(timerInterval);
     timerInterval = null; // Reset the interval ID
+    elapsedTime = Date.now() - startingTime;
+    updateDisplay();
 }
 
 function updateDisplay() {
-    document.getElementById('elapsedTime').innerText = formatTime(elapsedTime);
+    document.getElementById('elapsedTime').innerText = formatTime(elapsedTime / 1000);
 }
 
 function formatTime(seconds) {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
+    const remainingSeconds = Math.floor(seconds % 60);
     return `${pad(hours)}h ${pad(minutes)}m ${pad(remainingSeconds)}s`;
 }
 
@@ -215,7 +221,7 @@ function formatNumberWithCommas(n) {
 
 function generateEventSection() {
     return events.reduce((acc, event) => {
-        const count = parseInt(document.getElementById(event.replace(/\s+/g, '')).innerText) || 0;
+        const count = parseInt(document.getElementById(event.replace(/\s+/g, '').replace(/'/g, "")).innerText) || 0;
         return count > 0 ? `${acc}${count} x ${event}\n` : acc;
     }, "");
 }
@@ -262,7 +268,7 @@ function clearForm() {
     elementsToSave.forEach(id => {
         if (elementsToNotClear.includes(id)) return;
 
-        const element = document.getElementById(id.replace(/\s+/g, ''));
+        const element = document.getElementById(id.replace(/\s+/g, '').replace(/'/g, ""));
         if (!element) return;
 
         if (events.includes(id)) {
@@ -308,7 +314,7 @@ function initSave() {
 function saveFormState() {
     if (saveLock) return; // Prevents multiple saves from happening
     elementsToSave.forEach(id => {
-        const element = document.getElementById(id.replace(/\s+/g, ''));
+        const element = document.getElementById(id.replace(/\s+/g, '').replace(/'/g, ""));
         if (!element) return;
 
         let valueToSave;
@@ -332,7 +338,7 @@ function loadFormState() {
         const value = localStorage.getItem(id);
         if (value === null) return;
 
-        const element = document.getElementById(id.replace(/\s+/g, ''));
+        const element = document.getElementById(id.replace(/\s+/g, '').replace(/'/g, ""));
         if (!element) return;
 
         if (events.includes(id)) {
