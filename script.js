@@ -58,7 +58,7 @@ const events = [
 ];
 const elementsToSave = ["captainName", "customMessage", "voyageNo", "ship", "initialGold", "endingGold", "initialDoubloons", "endingDoubloons", "elapsedTime", ...events];
 const elementsToNotClear = ["captainName"];
-const roles = ['CO', 'XO', 'Quartermaster', 'Gunner', 'Boarder', 'Carpenter', 'Partial'];
+const roles = ['CO', 'XO', 'Quartermaster', 'Gunner', 'Marine', 'Carpenter', 'Partial'];
 
 let crewMemberCount = 0;
 let saveInterval;
