@@ -36,9 +36,7 @@ const shipNameToText = {
 
 const events = [
     "Grade 5 Emissary",
-    "PvP Sloop",
-    "PvP Brigantine",
-    "PvP Galleon",
+    "PvP Sinks",
     "Highest hourglass streak",
     "Sea Fort", "Skeleton Fort",
     "Fort of Fortune",
@@ -58,7 +56,9 @@ const events = [
     "Gold Hoarders Voyage",
     "Merchant Alliance Voyage",
     "Order of Souls Voyage",
-    "Athena's Fortune Voyage"
+    "Athena's Fortune Voyage",
+    "Skeleton Camp",
+    "Burning Blade",
 ];
 const elementsToSave = ["captainName", "customMessage", "voyageNo", "ship", "initialGold", "endingGold", "initialDoubloons", "endingDoubloons", "elapsedTime", ...events];
 const elementsToNotClear = ["captainName"];
