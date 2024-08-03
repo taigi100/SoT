@@ -18,20 +18,20 @@ const shipOptions = {
 };
 
 const shipNameToText = {
-    "NONSUCH": "voyage of the HMS Nonsuch",
-    "LYDIA": "voyage of the HMS Lydia auxiliary to the HMS Nonsuch",
-    "PEMBROKE": "voyage of the HMS Pembroke auxiliary to the HMS Nonsuch",
-    "SURPRISE": "voyage of the HMS Surprise auxiliary to the HMS Nonsuch",
-    "DREADNOUGHT": "voyage of the HMS Dreadnought auxiliary to the HMS Nonsuch",
-    "INTREPID": "voyage of the HMS Intrepid",
-    "ORION": "voyage of the HMS Orion auxiliary to the HMS Intrepid",
-    "HEADWIND": "voyage of the HMS Headwind auxiliary to the HMS Intrepid",
-    "ANDROMEDA": "voyage of the HMS Andromeda auxiliary to the HMS Intrepid",
-    "INSIGHT": "voyage of the HMS Insight",
-    "HORUS": "voyage of the HMS Horus auxiliary to the HMS Insight",
-    "ATHENA": "voyage of the HMS Athena auxiliary to the HMS Insight",
-    "PHOENIX": "voyage of the HMS Phoenix",
-    "FORESIGHT": "voyage of the HMS Foresight auxiliary to the HMS Foresight"
+    "NONSUCH": "voyage of HMS Nonsuch",
+    "LYDIA": "voyage of HMS Lydia auxiliary to HMS Nonsuch",
+    "PEMBROKE": "voyage of HMS Pembroke auxiliary to HMS Nonsuch",
+    "SURPRISE": "voyage of HMS Surprise auxiliary to HMS Nonsuch",
+    "DREADNOUGHT": "voyage of HMS Dreadnought auxiliary to HMS Nonsuch",
+    "INTREPID": "voyage of HMS Intrepid",
+    "ORION": "voyage of HMS Orion auxiliary to HMS Intrepid",
+    "HEADWIND": "voyage of HMS Headwind auxiliary to HMS Intrepid",
+    "ANDROMEDA": "voyage of HMS Andromeda auxiliary to HMS Intrepid",
+    "INSIGHT": "voyage of HMS Insight",
+    "HORUS": "voyage of HMS Horus auxiliary to HMS Insight",
+    "ATHENA": "voyage of HMS Athena auxiliary to HMS Insight",
+    "PHOENIX": "voyage of HMS Phoenix",
+    "FORESIGHT": "voyage of HMS Foresight auxiliary to HMS Foresight"
 }
 
 const events = [
