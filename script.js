@@ -30,8 +30,10 @@ const shipNameToText = {
     "INSIGHT": "voyage of HMS Insight",
     "HORUS": "voyage of HMS Horus auxiliary to HMS Insight",
     "ATHENA": "voyage of HMS Athena auxiliary to HMS Insight",
+    "PEARL": "voyage of HMS Pearl auxiliary to HMS Insight",
     "PHOENIX": "voyage of HMS Phoenix",
-    "FORESIGHT": "voyage of HMS Foresight auxiliary to HMS Foresight"
+    "FORESIGHT": "voyage of HMS Foresight auxiliary to HMS Phoenix",
+    "CENTURION": "voyage of HMS Centurion auxiliary to HMS Phoenix",
 }
 
 const events = [
@@ -59,6 +61,7 @@ const events = [
     "Athena's Fortune Voyage",
     "Skeleton Camp",
     "Burning Blade",
+    "Mission",
 ];
 const elementsToSave = ["captainName", "customMessage", "voyageNo", "ship", "initialGold", "endingGold", "initialDoubloons", "endingDoubloons", "elapsedTime", ...events];
 const elementsToNotClear = ["captainName"];
@@ -255,7 +258,7 @@ function generateReport() {
     const goldGained = endingGold - initialGold;
     const doubloonsGained = Math.max(endingDoubloons - initialDoubloons, 0);
 
-    const timeSection = elapsedTime !== 0 ? `\nTime:\n${formatTime(elapsedTime)}` : '';
+    const timeSection = elapsedTime !== 0 ? `\nTime:\n${formatTime(elapsedTime / 1000)}` : '';
     const eventsSection = generateEventSection();
     const crewSection = generateCrewSection();
 
