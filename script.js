@@ -17,6 +17,9 @@ const shipOptions = {
     "PHOENIX": "HMS PHOENIX",
     "FORESIGHT": "HMS FORESIGHT",
     "CENTURION": "HMS CENTURION",
+    "VANGUARD": "HMS VANGUARD",
+    "ENDEAVOUR": "HMS ENDEAVOUR",
+    "VENGEANCE": "HMS VENGEANCE"
 };
 
 const shipNameToText = {
@@ -36,6 +39,9 @@ const shipNameToText = {
     "PHOENIX": "voyage of HMS Phoenix",
     "FORESIGHT": "voyage of HMS Foresight auxiliary to HMS Phoenix",
     "CENTURION": "voyage of HMS Centurion auxiliary to HMS Phoenix",
+    "VANGUARD": "voyage of HMS VANGUARD",
+    "ENDEAVOUR": "voyage of HMS ENDEAVOUR auxiliary to HMS VANGUARD",
+    "VENGEANCE": "voyage of HMS VENGEANCE auxiliary to HMS VANGUARD"
 }
 
 const events = [
