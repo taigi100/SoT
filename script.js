@@ -17,6 +17,7 @@ const shipOptions = {
     "VARUNA": "HMS VARUNA",
     "CALCUTTA": "HMS CALCUTTA",
     "SAMRAT": "HMS SAMRAT",
+    "BENGAL":"HMS BENGAL",
     "VANGUARD": "HMS VANGUARD",
     "ENDEAVOUR": "HMS ENDEAVOUR",
     "VENGEANCE": "HMS VENGEANCE"
@@ -39,6 +40,7 @@ const shipNameToText = {
     "VARUNA": "voyage of HMS Varuna",
     "CALCUTTA": "voyage of HMS Calcutta auxiliary to HMS Varuna",
     "SAMRAT": "voyage of HMS Samrat auxiliary to HMS Varuna",
+    "BENGAL": "voyage of HMS Bengal auxiliary to HMS Varuna",
     "VANGUARD": "voyage of HMS VANGUARD",
     "ENDEAVOUR": "voyage of HMS ENDEAVOUR auxiliary to HMS VANGUARD",
     "VENGEANCE": "voyage of HMS VENGEANCE auxiliary to HMS VANGUARD"
